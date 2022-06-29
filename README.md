@@ -2,7 +2,9 @@
 
 This is my attempt at making a minimalistic Electron/Neutralino-like framework for making desktop apps with Deno.
 
-This started as the backend of my other project, the Birb Engine. A game engine for Deno focused on making desktop games. But in the process of making the backend test-friendly, I realized that it could just as well be a more general API, which could be used by itself.
+Like Neutralino, it uses the webengine already on the user's machine. So it doesn't bundle Chromium. But unlike Neutralino, it doesn't use its own runtime, instead using Deno's. Therefore the API is very minimal, by desing. And you can use Deno's API's for things like using the filesystem.
+
+This started as the backend of my other project, [the Birb Engine](https://github.com/JorchRL/Birb-Engine-Desktop3D-with-Deno). A 3D game engine for Deno focused on making desktop games. But in the process of making the backend test-friendly, I realized that it could just as well be a more general API, which could be used by itself.
 
 Now I have two projects! :D
 
