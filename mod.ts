@@ -1,1 +1,2 @@
-export { App } from "./app/App.ts";
+export { App } from "./app/mod.ts";
+export * from "./events/mod.ts";

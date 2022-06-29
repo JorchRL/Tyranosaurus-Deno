@@ -26,6 +26,24 @@ Unlike Electron, your app won't bundle Chromium. And unlike Neutralino, you can 
 
 And unlike both of them, the API is intended to be very minimal. So that may be an advantage or disadvantage, depending how you look at it :D
 
+## Todo
+
+- [] Export a single namespace `Tyrannosaurus` for the library
+- [] Write a set of integration tests for the `Application` class, which is the main entrypoint
+- [] Write a set of tests for the `Client` class.
+- [] Re-work folder structure. Several of the modules I have right now may not be necessary.
+- [] Design the client-side API under the same `Tyrannosaurus` namespace
+- [] Decide on a way to inject the client API when initializing the webview (ie with `webview.bind()`)
+- [] Implement a localhost file server under the `Server` class. And write some tests.
+
+Note: the `webview.bind()` way of doing things is an alternative to using websockets from a localhost to achieve the same thing. It seems more straight-forward to me. But I may implement the websocket approach later as an alternative.
+
+## Class overview
+
+- `Application` - the main entrypoint. An application instance should hold a `client` reference.
+- `Client` - a wrapper class for the `Webview` class of the webview library. `Client` should also bind the client-side API of the library under `window.tyrannosaurus`.
+- `Server` - a simple file server so that we can `fetch()` from localhost without issues.
+
 ## Contributing
 
 If you want to contribute, thanks! I would appreciate ideas, suggestions and issues. I would not encourage PRs yet as things are still changing very fast. I don't want people working on stuff that may not make it.

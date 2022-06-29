@@ -14,6 +14,7 @@
   "importMap" : "./import_map.jsonc",
   "tasks" : {
     "test" : "deno test",
-    "dev:start" : "deno run -A --unstable main.ts"
+    "dev:start" : "deno run -A --unstable main.ts",
+    "debug:webview": "deno run -A --unstable ./client/webview.ts"
   }
 }
