@@ -1,27 +1,39 @@
-import { AppState, ProcessManager } from "./_App.ts";
-
 /**
- * App
+ * This class is the entrypoint for a Tyrannosaurus application.
  */
-export class Application {
+class Application {
   public client: Webview;
-  private options: AppOptions;
+  private clientOptions: clientOptions;
 
-  constructor(options: AppOptions) {
-    // take client options
-    this.options = options;
+  private clientWasTerminated: boolean;
+
+  /**
+   * Creates an instance of application. And initializes its webview client.
+   * @param enableDebug - Whether to enable debug mode for the webview. Setting this to true will allow you to use webkit's developer tools.
+   */
+  constructor(enableDebug: boolean) {
+    this.client = new Webview(enableDebug);
+  }
+
+  public setClientOptions(options: clientOptions) {
+    this.clientOptions = options;
+  }
+
+  public sendMessage(message: string) {
   }
 
   public run() {
     this.client.run();
-    await this.server;
+    this.clientWasTerminated = true;
   }
 }
 
-interface AppOptions {
-  port: number;
+interface clientOptions {
   width: number;
   height: number;
   sizeHint: number;
   debug: boolean;
 }
+
+export { Application };
+export type { clientOptions };

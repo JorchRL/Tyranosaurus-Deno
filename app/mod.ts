@@ -1,3 +1,1 @@
-import { AppState, ProcessManager } from "./_App.ts";
-
-// import {} from "./App.ts"
+export * as Tyrannosaurus from "./App.ts";
