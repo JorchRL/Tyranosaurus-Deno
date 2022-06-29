@@ -6,7 +6,6 @@ import {
 
 console.log(">>> WEBVIEW.TS: started window subprocess");
 
-// TODO: accept arguments for window size, sizeHint and debug
 const windowSize: Size = {
   width: 800,
   height: 600,
@@ -40,3 +39,12 @@ function bindAPI(w: Webview) {
     `,
   );
 }
+
+// TODO: Bundle this into a class wrapper for webview. That always spawns a webview with the API callbacks already bound.
+
+/**
+ * sketch of the client API under window.tyrannosaurus
+ *
+ * terminate() - closes the webview
+ * echo() - sends the message back to the main process (to ease automated testing)
+ */
