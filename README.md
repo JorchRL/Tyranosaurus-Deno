@@ -28,13 +28,13 @@ And unlike both of them, the API is intended to be very minimal. So that may be 
 
 ## Todo
 
-- [] Export a single namespace `Tyrannosaurus` for the library
-- [] Write a set of integration tests for the `Application` class, which is the main entrypoint
-- [] Write a set of tests for the `Client` class.
-- [] Re-work folder structure. Several of the modules I have right now may not be necessary.
-- [] Design the client-side API under the same `Tyrannosaurus` namespace
-- [] Decide on a way to inject the client API when initializing the webview (ie with `webview.bind()`)
-- [] Implement a localhost file server under the `Server` class. And write some tests.
+- [ ] Export a single namespace `Tyrannosaurus` for the library
+- [ ] Write a set of integration tests for the `Application` class, which is the main entrypoint
+- [ ] Write a set of tests for the `Client` class.
+- [ ] Re-work folder structure. Several of the modules I have right now may not be necessary.
+- [ ] Design the client-side API under the same `Tyrannosaurus` namespace
+- [ ] Decide on a way to inject the client API when initializing the webview (ie with `webview.bind()`)
+- [ ] Implement a localhost file server under the `Server` class. And write some tests.
 
 Note: the `webview.bind()` way of doing things is an alternative to using websockets from a localhost to achieve the same thing. It seems more straight-forward to me. But I may implement the websocket approach later as an alternative.
 
