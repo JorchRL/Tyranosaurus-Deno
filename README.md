@@ -1,6 +1,6 @@
 # Tyranosaurus - Desktop Apps with Deno
 
-This is my attempt at making a minimalistic Electron/Neutralino-like framework for making desktop apps with Deno.
+This is my attempt at making a minimalistic Electron/Neutralino-like framework for making desktop apps with Deno. Internally, it uses the [webview library](https://github.com/webview/webview_deno)
 
 Like Neutralino, it uses the webengine already on the user's machine. So it doesn't bundle Chromium. But unlike Neutralino, it doesn't use its own runtime, instead using Deno's. Therefore the API is very minimal, by desing. And you can use Deno's API's for things like using the filesystem.
 
