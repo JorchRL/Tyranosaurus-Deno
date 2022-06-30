@@ -1,25 +1,21 @@
-/**
- * This class is the entrypoint for a Tyrannosaurus application.
- */
-class Application {
-  public client: Webview;
-  private clientOptions: clientOptions;
+import { Client, ClientOptions, preload } from "./Client.ts";
 
+/** This class is the entrypoint for a Tyrannosaurus application. */
+class Application {
+  public client: Client;
   private clientWasTerminated: boolean;
 
   /**
    * Creates an instance of application. And initializes its webview client.
-   * @param enableDebug - Whether to enable debug mode for the webview. Setting this to true will allow you to use webkit's developer tools.
+   * @param enableDebug - Whether to enable debug mode for the webview. Allows access to webkit's dev tools
    */
-  constructor(enableDebug: boolean) {
-    this.client = new Webview(enableDebug);
+  constructor(options?: ClientOptions) {
+    this.client = new Client(options);
+    this.clientWasTerminated = false;
   }
 
-  public setClientOptions(options: clientOptions) {
-    this.clientOptions = options;
-  }
-
-  public sendMessage(message: string) {
+  public getClientWasTerminated(): boolean {
+    return this.clientWasTerminated;
   }
 
   public run() {
@@ -28,12 +24,4 @@ class Application {
   }
 }
 
-interface clientOptions {
-  width: number;
-  height: number;
-  sizeHint: number;
-  debug: boolean;
-}
-
 export { Application };
-export type { clientOptions };

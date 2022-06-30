@@ -3,5 +3,11 @@
   "deno.lint": true,
   "deno.unstable": true,
   "deno.config": "./deno.jsonc",
-  "deno.importMap": "./import_map.jsonc"
+  "deno.importMap": "./import_map.jsonc",
+  "deno.testing.enable": true,
+  "deno.codeLens.test": true,
+  "deno.codeLens.testArgs": [
+    "--allow-all",
+    "--no-check",
+  ]  
 }

@@ -1,21 +1,14 @@
-import { describe, it } from "https://deno.land/std@0.144.0/testing/bdd.ts";
+import chai from "https://cdn.skypack.dev/chai@4.3.4?dts";
+const should = chai.should();
 
-// these are mostly integration tests (i think) for the core functionality of the library. All the main functionality involves a combination of the Application class and the client class (also the server). So I find it hard to think of unit tests for this.
+// Integration tests for the core functionality of the library. (Application + Client classes)
+import * as Tyrannosaurus from "/app/mod.ts";
 
-describe("Tyrannosaurus.App class - core functionality", () => {
-  it("should create an app instance with a webview field initialized in the constructor", () => {
-  });
-  it("should set the clientOptions", () => {
-  });
-  it("should run and terminate the client correctly (via a bound callback)", () => {
-    // I am testing two things here, but there is not really any other way to automate this. As far as i know. Anyways, I still need to test the binding of callbacks, which is part of the core functionality. That is, the App class should never run a webview without at least the terminate() callback.
-  });
-});
+// TODO(jorchrl):  before starting with the App class tests, I need to make sure I can reliably free up the resources allocated with webview.bind(). (see issue #3)
 
-describe("Tyrannosaurus.App - messaging with the client", () => {
-  it("should send a message to the client and get a response", () => {
-  });
-});
-
-describe("Tyrannosaurus.App - running the file server", () => {
-});
+// Deno.test("Application lifecycle", async (t) => {
+//   await t.step("Run and exit the app", () => {
+//     const app = new Tyrannosaurus.Application();
+//     app.run();
+//   });
+// });
