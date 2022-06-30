@@ -10,6 +10,17 @@ Now I have two projects! :D
 
 I decided to name it Tyranosaurus. Because why not!
 
+## Quick example
+
+Run the `example.ts` file with `$ deno task example`. And then open the dev tools and try:
+
+```
+tyrannosaurus.navigate("https://google.com")
+```
+
+This framework will inject an API under the `window.tyrannosaurus` object of any page that is loaded.
+
+
 ## Usage
 
 NOTE: it is not ready yet.
